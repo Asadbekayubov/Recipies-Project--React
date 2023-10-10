@@ -1,0 +1,15 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+function Navbar() {
+  return (
+    <nav className='bg-neutral-content'>
+      <div className='align-elements flex justify-between items-center py-3'>
+        <Link className='text-3xl' to="/">Recipies</Link>
+        <Link className='btn btn-primary' to="/create">Create</Link>
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar
