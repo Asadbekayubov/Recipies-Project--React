@@ -21,7 +21,7 @@ function ColorContainer() {
             <span
               key={color}
               style={{ backgroundColor: color }}
-              className={`w-7 h-7 color rounded-full bg-[#610C9F] cursor-pointer`}
+              className={`w-7 h-7 color rounded-full cursor-pointer`}
               onClick={() => changeColor(color)}
             ></span>
           );

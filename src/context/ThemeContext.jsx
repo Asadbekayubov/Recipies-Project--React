@@ -15,7 +15,7 @@ const updateState = (state, action) => {
 export function ThemeContextProvider({ children }) {
   const [state, dispatch] = useReducer(updateState, {
     color: "pink",
-    theme: "light",
+    theme: "dark",
   });
 
   const changeColor = (color) => {
