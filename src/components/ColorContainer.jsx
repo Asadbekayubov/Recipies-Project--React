@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa6";
+import { useThemeContext } from "../hooks/useThemeContext";
 
+const colors = ["#610C9F", "#F99417", "#BEADFA", "#CD5C08"];
 function ColorContainer() {
-  const colors = ["#610C9F", "#F99417", "#BEADFA", "#CD5C08"];
-  const [mode, setMode] = useState(true);
+  const { changeColor, theme, changeTheme } = useThemeContext();
+
+  const setNewTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    changeTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", theme);
+  };
   return (
     <div className="my-5 align-elements flex justify-between">
-      <button onClick={() => setMode(!mode)} className="text-4xl">
-        {mode && <FaMoon />}
-        {!mode && <FaSun />}
+      <button onClick={setNewTheme} className="text-4xl">
+        {theme == "light" ? <FaSun /> : <FaMoon />}
       </button>
-      <div className="colors flex gap-2">
+      <div className="flex gap-2">
         {colors.map((color) => {
           return (
-            <span key={color} style={{backgroundColor:color}}
-              className={`w-5 h-5 color rounded-full bg-[#610C9F] cursor-pointer`}
+            <span
+              key={color}
+              style={{ backgroundColor: color }}
+              className={`w-7 h-7 color rounded-full bg-[#610C9F] cursor-pointer`}
+              onClick={() => changeColor(color)}
             ></span>
           );
         })}

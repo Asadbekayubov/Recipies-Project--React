@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { useThemeContext } from "../hooks/useThemeContext";
 
 function Navbar() {
@@ -9,7 +9,7 @@ function Navbar() {
       <div className="align-elements flex justify-between items-center py-3">
         <Link className="text-3xl" to="/">
           Recipies
-        </Link> 
+        </Link>
         <Link className="btn btn-primary" to="/create">
           Create
         </Link>
