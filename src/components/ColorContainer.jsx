@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa6";
 import { useThemeContext } from "../hooks/useThemeContext";
 
