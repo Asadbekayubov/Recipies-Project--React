@@ -8,7 +8,6 @@ function ColorContainer() {
   const setNewTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     changeTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", theme);
   };
   return (
     <div className="my-5 align-elements flex justify-between">
